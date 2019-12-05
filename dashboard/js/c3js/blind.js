@@ -2,8 +2,8 @@ var chart = c3.generate({
     bindto: "#blind-chart",
     data: {
         columns: [
-            ['data1',40],
-            ['data2', 120],
+            ['Yes',40],
+            ['No', 120],
         ],
         type : 'donut',
         onclick: function (d, i) { console.log("onclick", d, i); },

@@ -1,0 +1,14 @@
+#all-title,#blind-title,#low-vision-title,#motor-title,#deaf-title,#cognitive-title,#color-blindess-title,#illiterate-title{
+    cursor: pointer;
+
+}
+
+.main-container{
+    padding: 20px 20px 20px 20px;
+}
+.test-table{
+    margin: 10px 10px 10px 10px;
+}
+.chart-area{
+    padding: 20px;
+}

@@ -1,32 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>content</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/mystyle.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- <a class="navbar-brand" href="#">UK TEST</a> -->
+        <ul class="navbar-nav" style="margin: auto;" >
+            <li class="nav-item">
+                <a id="nav-gov" class="nav-link active" href="#">Government</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-uni" class="nav-link" href="#">University</a>
+            </li>
+            <li class="nav-item">
+                <a id="nav-others" class="nav-link" href="#">Others</a>
+            </li>
+          
+            <li class="nav-item dropdown" style="display: none;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Dropdown link
+                </a>
+                <div class="dropdown-menu" ">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+            </li>
+        </ul><span style="display: none;">
+            <form class="form-inline float-md-right" action="/action_page.php">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+        </span>
+
+    </nav>
+
+    <div class="container-fluid">
+        <!-- <h3>HI</h3> -->
+        <div class="chart-area">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h5>Title</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi eveniet officia neque dolorem saepe vitae soluta nobis, vel dolorum cum nesciunt totam exercitationem ex. Sequi commodi eos beatae ad eum?</p>
+                </div>
+                <div class="col-sm-4">
+                    <div id="all-chart-content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-table">
+                <table class="table table-striped">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Domain</th>
+                            <th scope="col">All</th>
+                            <th scope="col">Blind</th>
+                            <th scope="col">Cognitive</th>
+                            <th scope="col">Color Blindness</th>
+                            <th scope="col">Deaf</th>
+                            <th scope="col">Illiterate</th>
+                            <th scope="col">Low Vision</th>
+                            <th scope="col">Motor</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Google.com</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+
+                            
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>yahoo.com</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Bing.com</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+                            <td>Otto</td>
+
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+        </div>
+    </div>
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.4.0/d3.min.js"></script>
 
-        <script src="./js/c3js/allCharts.js"></script>
-        <script src="./js/c3js/blind.js"></script>
-        <script src="./js/c3js/motor.js"></script>
-        <script src="./js/c3js/cognitive.js"></script>
-        <script src="./js/c3js/colorBlindness.js"></script>
-        <script src="./js/c3js/deaf.js"></script>
-        <script src="./js/c3js/illiterate.js"></script>
-        <script src="./js/c3js/lowVision.js"></script>
-        <script src="./js/c3js/myjs.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.11/c3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.4.0/d3.min.js"></script>
+
+    <script src="./js/c3js/allCharts.js"></script>
+    <script src="./js/c3js/contentPage.js"></script>
 </body>
+
 </html>
