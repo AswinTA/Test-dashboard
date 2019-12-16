@@ -1,19 +1,4 @@
-var chart = c3.generate({
-    bindto: "#deaf-chart",
-    data: {
-        columns: [
-            ['Yes',40],
-            ['No', 120],
-        ],
-        type : 'donut',
-        onclick: function (d, i) { console.log("onclick", d, i); },
-        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-    },
-    donut: {
-        title: "Deaf"
-    }
-});
+
 
 // setTimeout(function () {
 //     chart.load({
@@ -32,4 +17,48 @@ var chart = c3.generate({
 //         ids: 'data2'
 //     });
 // }, 2500);
+document.onload = loadDeafData();
 
+async function loadDeafData(){
+
+    let url ="http://192.168.35.34:7555/";
+    let jsonData = new Object();
+    jsonData.affectedUsers = "Deaf";
+    let response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonData)
+      });
+    if (response.ok) { // if HTTP-status is 200-299
+      // get the response body (the method explained below)
+      let json = await response.json();
+      console.log(json)
+      let total = 126;
+      let yes = total - json;
+      let no = total -yes;
+
+      var chart = c3.generate({
+        bindto: "#deaf-chart",
+        data: {
+            columns: [
+                ['Yes',yes],
+                ['No', no],
+            ],
+            type : 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        },
+        donut: {
+            title: "Deaf"
+        }
+    });
+
+
+    } else {
+      alert("HTTP-Error: " + response.status);
+    }
+}
