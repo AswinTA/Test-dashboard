@@ -13,6 +13,10 @@ const allChart = c3.generate({
     donut: {
         title: "All"
     }
+    // size:{
+    //     width:200,
+    //     height:200
+    // }
 });
 //  export default allChart;
 // setTimeout(function () {
