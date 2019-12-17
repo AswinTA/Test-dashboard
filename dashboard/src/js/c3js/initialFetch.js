@@ -5,9 +5,10 @@ import setMotorDonut from "./motor";
 import setCognitiveDonut from "./cognitive";
 import setColorBlindnessDonut from "./colorBlindness";
 import setIlliterateDonut from "./illiterate";
+import setAllDonutChart from "./allCharts";
 
 // data fetch url
-let url = "http://192.168.35.34:7555/";
+let url = "http://192.168.35.16:7555/";
 
 document.onload = loadAllCharts();
 
@@ -21,6 +22,7 @@ function loadAllCharts() {
   initLoadCognitiveDonut();
   initLoadColorBlindnessDonut();
   initLoadIlliterateDonut();
+  initLoadAllDonut();
 }
 
 
@@ -105,4 +107,12 @@ async function initLoadIlliterateDonut() {
   jsonData.affectedUsers = "Illiterate";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   setIlliterateDonut(jsonResponse.Total, jsonResponse.Yes);
+}
+
+async function initLoadAllDonut(){
+  let jsonData = new Object();
+  jsonData.affectedUsers = "All_User";
+  let jsonResponse = await loadDataByFetchApi(url, jsonData);
+  console.log(jsonResponse);
+  setAllDonutChart(jsonResponse.Total,jsonResponse.Yes);
 }
