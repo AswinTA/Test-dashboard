@@ -1,10 +1,7 @@
 import setDeafDonut from "./deaf"
+import setBlindDonut from "./blind"
 
-async function loadDeafData(url, jsonData){
-
-    // let url ="http://192.168.35.34:7555/";
-    // let jsonData = new Object();
-    // jsonData.affectedUsers = "Deaf";
+async function loadDataByFetchApi(url, jsonData){
     let response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -13,23 +10,34 @@ async function loadDeafData(url, jsonData){
         },
         body: JSON.stringify(jsonData)
       });
-    if (response.ok) { // if HTTP-status is 200-299
-      // get the response body (the method explained below)
-      return json = await response.json();
-    //   console.log(json)
-    //   let total = json.Total;
-    //   let yes = json.Yes;
-    //   setDeafDonut(total, yes);
+    if (response.ok) {
+      let json = await response.json();
+      return json;
     } else {
       alert("HTTP-Error: " + response.status);
-      // setDeafDonut(total, yes);
     }
 }
  
 let url = "http://192.168.35.34:7555/";
-function initLoadDeafDonut(){
+
+ document.onload = loadAllCharts();
+
+async function initLoadDeafDonut(){
     let jsonData = new Object();
     jsonData.affectedUsers = "Deaf";
-    jsonResponse = loadDeafData(url,jsonData);
-    console.log(jsonResponse);
+   let jsonResponse = await loadDataByFetchApi(url,jsonData);
+    // console.log(jsonResponse);
+    setDeafDonut(jsonResponse.Total, jsonResponse.Yes);
+}
+async function initLoadBlindDonut(){
+  let jsonData = new Object();
+  jsonData.affectedUsers = "Blind";
+  let jsonResponse = await loadDataByFetchApi(url,jsonData);
+  console.log(jsonResponse);
+  setBlindDonut(jsonResponse.Total, jsonResponse.Yes);
+}
+
+function loadAllCharts(){
+  initLoadDeafDonut();
+  initLoadBlindDonut()
 }
