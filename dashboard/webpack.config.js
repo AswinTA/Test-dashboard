@@ -8,7 +8,9 @@ module.exports = {
     // },
 
     entry: {
-        '/js/c3js/initialFetch': path.resolve(__dirname, './src/js/c3js/initialFetch.js')
+        '/js/c3js/initialFetch': path.resolve(__dirname, './src/js/c3js/initialFetch.js'),
+        '/js/c3js/myjs':path.resolve(__dirname, './src/js/c3js/myjs.js'),
+        '/js/c3js/contentPage':path.resolve(__dirname,'./src/js/c3js/contentPage.js')
       },
       output: {
         path: path.resolve(__dirname, 'dist'),
