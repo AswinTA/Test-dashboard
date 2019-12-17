@@ -2,6 +2,7 @@ import setDeafDonut from "./deaf";
 import setBlindDonut from "./blind";
 import setLowVisionDonut from "./lowVision";
 import setMotorDonut from "./motor";
+import setCognitiveDonut from "./cognitive";
 
 async function loadDataByFetchApi(url, jsonData){
     let response = await fetch(url, {
@@ -52,10 +53,17 @@ async function initLoadMotorDonut(){
   console.log(jsonResponse);
   setMotorDonut(jsonResponse.Total, jsonResponse.Yes);
 }
-
+async function initLoadCognitiveDonut(){
+  let jsonData = new Object();
+  jsonData.affectedUsers = "Cognitive";
+  let jsonResponse = await loadDataByFetchApi(url,jsonData);
+  console.log(jsonResponse);
+  setCognitiveDonut(jsonResponse.Total, jsonResponse.Yes);
+}
 function loadAllCharts(){
   initLoadDeafDonut();
   initLoadBlindDonut();
   initLoadLowVisionDonut();
   initLoadMotorDonut();
+  initLoadCognitiveDonut();
 }
