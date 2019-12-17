@@ -1,5 +1,30 @@
 
 
+function setDeafDonut(total,yes){
+  let no = total - yes;
+  var chart = c3.generate({
+    bindto: "#deaf-chart",
+    data: {
+        columns: [
+            ['Yes',yes],
+            ['No',no],
+        ],
+        type : 'donut',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+    },
+    donut: {
+        title: "Deaf"
+    }
+});
+}
+
+
+
+
+
+
 // setTimeout(function () {
 //     chart.load({
 //         columns: [
@@ -36,29 +61,15 @@ async function loadDeafData(){
       // get the response body (the method explained below)
       let json = await response.json();
       console.log(json)
-      let total = 126;
-      let yes = total - json;
-      let no = total -yes;
-
-      var chart = c3.generate({
-        bindto: "#deaf-chart",
-        data: {
-            columns: [
-                ['Yes',yes],
-                ['No', no],
-            ],
-            type : 'donut',
-            onclick: function (d, i) { console.log("onclick", d, i); },
-            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-        },
-        donut: {
-            title: "Deaf"
-        }
-    });
-
+      let total = json.Total;
+      let yes = json.Yes;
+      setDeafDonut(total, yes);
 
     } else {
       alert("HTTP-Error: " + response.status);
+      // setDeafDonut(total, yes);
     }
 }
+
+
+export default setDeafDonut;
