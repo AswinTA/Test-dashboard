@@ -1,5 +1,3 @@
-
-
 function setDeafDonut(total, yes) {
   let no = total - yes;
   var chart = c3.generate({

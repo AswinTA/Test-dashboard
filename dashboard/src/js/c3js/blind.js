@@ -1,6 +1,5 @@
 function setBlindDonut(total, yes) {
     let no = total - yes;
-
     var chart = c3.generate({
         bindto: "#blind-chart",
         data: {
@@ -18,5 +17,4 @@ function setBlindDonut(total, yes) {
         }
     });
 }
-
 export default setBlindDonut;

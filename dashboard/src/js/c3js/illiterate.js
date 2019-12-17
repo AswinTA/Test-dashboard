@@ -17,5 +17,4 @@ function setIlliterateDonut(total,yes) {
         }
     });
 }
-
 export default setIlliterateDonut;

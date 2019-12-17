@@ -17,5 +17,4 @@ function setCognitiveDonut(total,yes){
         }
     });
 }
-
 export default setCognitiveDonut;

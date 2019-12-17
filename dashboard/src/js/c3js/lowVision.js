@@ -1,5 +1,3 @@
-
-
 function setLowVisionDonut(total, yes){
     let no = total - yes;
     var chart = c3.generate({
@@ -19,6 +17,5 @@ function setLowVisionDonut(total, yes){
         }
     });
 }
-
 export default setLowVisionDonut;
 

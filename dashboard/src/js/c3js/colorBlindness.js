@@ -1,4 +1,3 @@
-
 function setColorBlindnessDonut(total, yes){
     let no = total - yes;
     var chart = c3.generate({
@@ -17,7 +16,5 @@ function setColorBlindnessDonut(total, yes){
             title: "Color Blindness"
         }
     });
-    
 }
-
 export default setColorBlindnessDonut;

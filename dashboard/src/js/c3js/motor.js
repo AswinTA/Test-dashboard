@@ -1,5 +1,3 @@
-
-
 function setMotorDonut(total,yes){
     let no = total - yes;
     var chart = c3.generate({
@@ -19,6 +17,4 @@ function setMotorDonut(total,yes){
         }
     });
 }
-
-
 export default setMotorDonut;
