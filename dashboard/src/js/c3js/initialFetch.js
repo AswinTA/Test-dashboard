@@ -3,6 +3,7 @@ import setBlindDonut from "./blind";
 import setLowVisionDonut from "./lowVision";
 import setMotorDonut from "./motor";
 import setCognitiveDonut from "./cognitive";
+import setColorBlindnessDonut from "./colorBlindness";
 
 async function loadDataByFetchApi(url, jsonData){
     let response = await fetch(url, {
@@ -60,10 +61,19 @@ async function initLoadCognitiveDonut(){
   console.log(jsonResponse);
   setCognitiveDonut(jsonResponse.Total, jsonResponse.Yes);
 }
+async function initLoadColorBlindnessDonut(){
+  let jsonData = new Object();
+  jsonData.affectedUsers = "Color_Blindness";
+  let jsonResponse = await loadDataByFetchApi(url, jsonData);
+  console.log(jsonResponse);
+  setColorBlindnessDonut(jsonResponse.Total,jsonResponse.Yes);
+}
+
 function loadAllCharts(){
   initLoadDeafDonut();
   initLoadBlindDonut();
   initLoadLowVisionDonut();
   initLoadMotorDonut();
   initLoadCognitiveDonut();
+  initLoadColorBlindnessDonut();
 }
