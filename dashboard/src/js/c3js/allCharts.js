@@ -1,39 +1,51 @@
-const allChart = c3.generate({
-    bindto: "#all-chart",
-    data: {
-        columns: [
-            ['Yes',40],
-            ['No', 120],
-        ],
-        type : 'donut',
-        onclick: function (d, i) { console.log("onclick", d, i); },
-        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-    },
-    donut: {
-        title: "All"
-    }
-    // size:{
-    //     width:200,
-    //     height:200
-    // }
-});
-//  export default allChart;
-// setTimeout(function () {
-//     chart.load({
-//         columns: [
-//             ["Yes", 0.9, 0.2, 0.9, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.9, 0.2, 0.2, 0.9, 0.9, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
-//             ["No", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
-//         ]
-//     });
-// }, 1500);
+function setAllDonutChart(total, yes){
+    let no = total - yes;
+    const allChart = c3.generate({
+        bindto: "#all-chart",
+        data: {
+            columns: [
+                ['Yes',30],
+                ['No', 60],
+            ],
+            type : 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); },
 
-// setTimeout(function () {
-//     chart.unload({
-//         ids: 'data1'
-//     });
-//     chart.unload({
-//         ids: 'data2'
-//     });
-// }, 2500);
+            colors: {
+                Yes:'#000000',
+                No: '#99965c'
+              },
+              labels: false
+        },
+        donut: {
+            title: "All",
+            padAngle : .03
+        }
+        // size:{
+        //     width:200,
+        //     height:200
+        // }
+    });
+    // setTimeout(function () {
+    //     allChart.load({
+    //         columns: [
+    //             ["d1", 5,5,5,5,5,5,5,5,5,5],
+    //             ["d2",25,25],
+    //             ["d3",10,10,10,10,10]
+
+    //         ]
+    //     });
+    // }, 1500);
+    // setTimeout(function () {
+    //     allChart.unload({
+    //         ids: 'Yes'
+    //     });
+    //     allChart.unload({
+    //         ids: 'No'
+    //     });
+    // }, 2500);
+}
+
+export default setAllDonutChart;
 
