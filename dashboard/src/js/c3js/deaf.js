@@ -5,12 +5,8 @@ function setDeafDonut(total, Affected) {
     data: {
       columns: [
         ['Affected', Affected],
-        ['Not_Affected', no],
-    ],
-    colors: {
-        Affected: '#db0e0e',
-        Not_Affected: '#2ba11b'
-    }, 
+        ['Not Affected', no],
+      ],
       type: 'donut',
       onclick: function (d, i) { console.log("onclick", d, i); },
       onmouseover: function (d, i) { console.log("onmouseover", d, i); },
@@ -18,6 +14,9 @@ function setDeafDonut(total, Affected) {
     },
     donut: {
       title: "Deaf"
+    },
+    color: {
+      pattern: ['#db0e0e', '#2ba11b']
     }
   });
 }

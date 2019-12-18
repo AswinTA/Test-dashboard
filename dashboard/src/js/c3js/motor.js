@@ -5,12 +5,8 @@ function setMotorDonut(total,Affected){
         data: {
             columns: [
                 ['Affected', Affected],
-                ['Not_Affected', no],
+                ['Not Affected', no],
             ],
-            colors: {
-                Affected: '#db0e0e',
-                Not_Affected: '#2ba11b'
-            }, 
             type : 'donut',
             onclick: function (d, i) { console.log("onclick", d, i); },
             onmouseover: function (d, i) { console.log("onmouseover", d, i); },
@@ -18,6 +14,9 @@ function setMotorDonut(total,Affected){
         },
         donut: {
             title: "Motor"
+        },
+        color: {
+            pattern: ['#db0e0e', '#2ba11b']
         }
     });
 }

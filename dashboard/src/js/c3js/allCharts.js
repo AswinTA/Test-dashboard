@@ -29,23 +29,26 @@ function setAllDonutChart(total, Affected) {
         data: {
         columns: [
             ['Affected', Affected],
-            ['Not_Affected', no],
+            ['Not Affected', no],
         ],
         type: 'donut',
         onclick: function (d, i) { /* console.log("onclick", d, i); */ },
         onmouseover: function (d, i) {/*  console.log("onmouseover", d, i); */ },
         onmouseout: function (d, i) { /* console.log("onmouseout", d, i); */ },
 
-        colors: {
-            Affected: '#db0e0e',
-            Not_Affected: '#2ba11b'
-        }, 
+        // colors: {
+        //     Affected: '#db0e0e',
+        //     NotAffected: '#2ba11b'
+        // }, 
 
         labels: false
     },
         donut: {
         title: "All",
         padAngle: .04
+    },
+    color: {
+        pattern: ['#db0e0e', '#2ba11b']
     }
         // size:{
         //     width:200,
