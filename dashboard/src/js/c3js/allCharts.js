@@ -45,7 +45,7 @@ function setAllDonutChart(total, Affected) {
     },
         donut: {
         title: "All",
-        padAngle: .04
+        padAngle: .02
     },
     color: {
         pattern: ['#db0e0e', '#2ba11b']

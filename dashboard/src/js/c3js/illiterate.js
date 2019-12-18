@@ -13,7 +13,8 @@ function setIlliterateDonut(total,Affected) {
             onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
         donut: {
-            title: "Illiterate"
+            title: "Illiterate",
+            padAngle: .02
         },
         color: {
             pattern: ['#db0e0e', '#2ba11b']

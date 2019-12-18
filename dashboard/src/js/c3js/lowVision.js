@@ -13,7 +13,8 @@ function setLowVisionDonut(total, Affected){
             onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
         donut: {
-            title: "Low Vision"
+            title: "Low Vision",
+            padAngle: .02
         },
         color: {
             pattern: ['#db0e0e', '#2ba11b']

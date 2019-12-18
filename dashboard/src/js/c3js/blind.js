@@ -16,7 +16,8 @@ function setBlindDonut(total, Affected) {
             pattern: ['#db0e0e', '#2ba11b']
         },
         donut: {
-            title: "Blind"
+            title: "Blind",
+            padAngle: .02
         }
     });
 }

@@ -13,7 +13,8 @@ function setCognitiveDonut(total,Affected){
             onmouseout: function (d, i) { console.log("onmouseout", d, i); }
         },
         donut: {
-            title: "Cognitive"
+            title: "Cognitive",
+            padAngle: .02
         },
         color: {
             pattern: ['#db0e0e', '#2ba11b']
