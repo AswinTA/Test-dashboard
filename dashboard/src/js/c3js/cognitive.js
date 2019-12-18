@@ -1,12 +1,16 @@
-function setCognitiveDonut(total,yes){
-    let no = total - yes;
+function setCognitiveDonut(total,Affected){
+    let no = total - Affected;
     var chart = c3.generate({
         bindto: "#cognitive-chart",
         data: {
             columns: [
-                ['Yes',yes],
-                ['No', no],
+                ['Affected', Affected],
+                ['Not_Affected', no],
             ],
+            colors: {
+                Affected: '#db0e0e',
+                Not_Affected: '#2ba11b'
+            }, 
             type : 'donut',
             onclick: function (d, i) { console.log("onclick", d, i); },
             onmouseover: function (d, i) { console.log("onmouseover", d, i); },
