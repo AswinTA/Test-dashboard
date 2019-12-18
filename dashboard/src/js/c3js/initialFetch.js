@@ -51,7 +51,7 @@ async function initLoadDeafDonut() {
   jsonData.affectedUsers = "Deaf";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   // console.log(jsonResponse);
-  setDeafDonut(jsonResponse.Total, jsonResponse.Yes);
+  setDeafDonut(jsonResponse.Total, jsonResponse.Affected);
 }
 
 // to load data for blind donut chart
@@ -60,7 +60,7 @@ async function initLoadBlindDonut() {
   jsonData.affectedUsers = "Blind";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   console.log(jsonResponse);
-  setBlindDonut(jsonResponse.Total, jsonResponse.Yes);
+  setBlindDonut(jsonResponse.Total, jsonResponse.Affected);
 }
 
 
@@ -70,7 +70,7 @@ async function initLoadLowVisionDonut() {
   jsonData.affectedUsers = "Low_Vision";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   console.log(jsonResponse);
-  setLowVisionDonut(jsonResponse.Total, jsonResponse.Yes);
+  setLowVisionDonut(jsonResponse.Total, jsonResponse.Affected);
 }
 
 // to load data for motor donut chart
@@ -79,7 +79,7 @@ async function initLoadMotorDonut() {
   jsonData.affectedUsers = "Motor";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   console.log(jsonResponse);
-  setMotorDonut(jsonResponse.Total, jsonResponse.Yes);
+  setMotorDonut(jsonResponse.Total, jsonResponse.Affected);
 }
 
 
@@ -89,7 +89,7 @@ async function initLoadCognitiveDonut() {
   jsonData.affectedUsers = "Cognitive";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   console.log(jsonResponse);
-  setCognitiveDonut(jsonResponse.Total, jsonResponse.Yes);
+  setCognitiveDonut(jsonResponse.Total, jsonResponse.Affected);
 }
 
 // to load data for color blindness donut chart
@@ -98,7 +98,7 @@ async function initLoadColorBlindnessDonut() {
   jsonData.affectedUsers = "Color_Blindness";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   console.log(jsonResponse);
-  setColorBlindnessDonut(jsonResponse.Total, jsonResponse.Yes);
+  setColorBlindnessDonut(jsonResponse.Total, jsonResponse.Affected);
 }
 
 // to load data for illiterate donut chart
@@ -106,7 +106,7 @@ async function initLoadIlliterateDonut() {
   let jsonData = new Object();
   jsonData.affectedUsers = "Illiterate";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
-  setIlliterateDonut(jsonResponse.Total, jsonResponse.Yes);
+  setIlliterateDonut(jsonResponse.Total, jsonResponse.Affected);
 }
 
 async function initLoadAllDonut(){
@@ -114,5 +114,5 @@ async function initLoadAllDonut(){
   jsonData.affectedUsers = "All_User";
   let jsonResponse = await loadDataByFetchApi(url, jsonData);
   console.log(jsonResponse);
-  setAllDonutChart(jsonResponse.Total,jsonResponse.Yes);
+  setAllDonutChart(jsonResponse.Total,jsonResponse.Affected);
 }
