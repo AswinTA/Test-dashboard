@@ -4,25 +4,25 @@ function setAllDonutChart(total, Affected) {
     const allChart = c3.generate({
         bindto: "#all-chart",
         // all features
-        size: {
-            width: 400,
-            height: 400
-        },
-        padding: {
-            top: 50,
-            left: 50,
-            right: 50,
-            bottom: 50
-        },
-        // color: {
-        //     pattern: ['#1f77b4', '#aec7e8']
-        //   },
-        transition: {
-            duration: 500
-        },
-        oninit: function () { console.log("Chart initialized") },
-        onrendered: function () {console.log("Chart is rendered") },
-        onresize: function () { console.log("Screen is resized")},
+        // size: {
+        //     width: 400,
+        //     height: 400
+        // },
+        // padding: {
+        //     top: 50,
+        //     left: 50,
+        //     right: 50,
+        //     bottom: 50
+        // },
+        // // color: {
+        // //     pattern: ['#1f77b4', '#aec7e8']
+        // //   },
+        // transition: {
+        //     duration: 500
+        // },
+        // oninit: function () { console.log("Chart initialized") },
+        // onrendered: function () {console.log("Chart is rendered") },
+        // onresize: function () { console.log("Screen is resized")},
 
 
         // all features
